@@ -1,0 +1,7 @@
+POST http://localhost:8080/reg?name=Vova&login=Sup&password=qwert
+
+###
+
+POST http://localhost:8080/auth?login=Sup&password=qwert
+
+###

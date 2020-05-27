@@ -21,6 +21,15 @@ public class UserStorage {
         }
         return null;
     }
+
+    public boolean checkUserByLogin (String login){
+        for (User user: list  ) {
+            if (user.getLogin().equals(login)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 

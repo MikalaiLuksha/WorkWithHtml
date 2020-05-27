@@ -25,7 +25,13 @@ public class RegServlet extends HttpServlet {
         String name = req.getParameter("name");
         String login = req.getParameter("login");
         String password = req.getParameter("password");
+        if (userStorage.checkUserByLogin(login)) {
         userStorage.add(new User(login, name, password));
         resp.sendRedirect("/");
+        }
+        else {
+            req.setAttribute("message", "Login can't be used");
+            getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req, resp);
+        }
     }
 }

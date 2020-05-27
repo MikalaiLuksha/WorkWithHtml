@@ -10,6 +10,7 @@
     <input type="text" name="login" placeholder="Login">
     <input type="text" name="password" placeholder="Password">
     <button>Submit</button>
-</form>>
+</form>
+${requestScope.message}
 </body>
 </html>

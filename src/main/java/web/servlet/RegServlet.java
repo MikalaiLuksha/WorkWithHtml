@@ -1,4 +1,4 @@
-package web;
+package web.servlet;
 
 import entity.User;
 import storage.UserStorage;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/reg", name = "regServlet")
+@WebServlet(urlPatterns = "/reg", name = "RegServlet")
 
 public class RegServlet extends HttpServlet {
 

@@ -1,4 +1,4 @@
-package web;
+package web.filter;
 
 import entity.User;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter (filterName = "regFilter", servletNames = "regServlet")
+@WebFilter (filterName = "regFilter", servletNames = {"RegServlet", "AuthServlet"})
 public class RegFilter extends HttpFilter {
 
     @Override
@@ -19,7 +19,7 @@ public class RegFilter extends HttpFilter {
         if (user == null) {
             chain.doFilter(req, res);
         } else {
-            req.setAttribute("message", "You have already registration");
+            req.setAttribute("message", "No action available");
             getServletContext().getRequestDispatcher("/").forward(req, res);
         }
     }

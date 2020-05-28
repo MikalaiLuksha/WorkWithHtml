@@ -1,4 +1,4 @@
-package web;
+package web.servlet;
 
 import entity.User;
 import service.UserService;

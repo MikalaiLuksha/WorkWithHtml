@@ -1,4 +1,4 @@
-package web;
+package web.servlet;
 
 import service.ServiceCalc;
 
@@ -25,14 +25,14 @@ public class CalcServlet extends HttpServlet {
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
             ServiceCalc serviceCalc = new ServiceCalc();
-            if (req.getSession().getAttribute("resultCalc") == null) {
-                req.getSession().setAttribute("resultCalc", new ArrayList<>());
-            }
             double num1 = Double.parseDouble(req.getParameter("num1"));
             double num2 = Double.parseDouble(req.getParameter("num2"));
             String operation = req.getParameter("operation");
             double res = serviceCalc.calculation(operation, num1, num2);
-            req.setAttribute("res", "Result = " + res);
+            String stringRes = "Result : " + num1 + operation + num2 + " = " + res;
+            req.setAttribute("res", stringRes);
             getServletContext().getRequestDispatcher("/pages/calc.jsp").forward(req, resp);
+            List <String> result = (List) req.getSession().getAttribute("result");
+            result.add(stringRes);
         }
 }

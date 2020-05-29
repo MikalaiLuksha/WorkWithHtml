@@ -22,4 +22,20 @@ public class ServiceCalc {
         }
         return num3;
     }
+
+    public String symbol (String operation) {
+
+        switch (operation) {
+            case ("plus"):
+                return "+";
+            case ("minus"):
+              return "-";
+            case ("div"):
+                return "/";
+             case ("times"):
+              return "*";
+            default:
+                throw new IllegalStateException("Unexpected value: " + operation);
+        }
+    }
 }

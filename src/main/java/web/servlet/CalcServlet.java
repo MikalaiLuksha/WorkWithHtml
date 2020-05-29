@@ -29,7 +29,8 @@ public class CalcServlet extends HttpServlet {
             double num2 = Double.parseDouble(req.getParameter("num2"));
             String operation = req.getParameter("operation");
             double res = serviceCalc.calculation(operation, num1, num2);
-            String stringRes = "Result : " + num1 + operation + num2 + " = " + res;
+            String symbol = serviceCalc.symbol(operation);
+            String stringRes = "" + num1 + " " + symbol + " " + num2 + " = " + res;
             req.setAttribute("res", stringRes);
             getServletContext().getRequestDispatcher("/pages/calc.jsp").forward(req, resp);
             List <String> result = (List) req.getSession().getAttribute("result");

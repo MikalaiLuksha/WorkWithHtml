@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter (filterName = "regFilter", servletNames = {"RegServlet", "AuthServlet"})
-public class RegFilter extends HttpFilter {
+public class RegAuthFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {

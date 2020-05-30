@@ -19,6 +19,7 @@
             padding: 0 7px; /* Расстояние вокруг разделителя */
         }
     </style>
+
 </head>
 <body>
 <h2>${requestScope.messageHello}</h2>
@@ -31,14 +32,12 @@
     <li><a href="/logout">Logout</a></li>
 </ul>
 
-<style>
 
 <%--<a href="/reg">Reg</a>--%>
 <%--<a href="/auth">Auth</a>--%>
 <%--<a href="/calc">Calc</a>--%>
 <%--<a href="/logout">Logout</a>--%>
 <%--<a href="/history">History</a>--%>
-</form>
-${requestScope.message}
+<h4>${requestScope.message}</h4>
 </body>
 </html>

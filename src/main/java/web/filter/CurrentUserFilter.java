@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "FilterCurrentUser", servletNames = {"CalcServlet", "LogoutServlet"})
+@WebFilter(filterName = "FilterCurrentUser", servletNames = {"CalcServlet", "LogoutServlet", "HistoryServlet"})
 
 public class CurrentUserFilter extends HttpFilter {
 

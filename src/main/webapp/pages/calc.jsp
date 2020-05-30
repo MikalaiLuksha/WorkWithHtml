@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Calc</title>
+    <style>
+        .stms {
+            color: black;
+        }
+
+    </style>
 </head>
 <body>
 <form action="/calc" method="post">
@@ -16,8 +22,14 @@
     <input type="text" name="num2" placeholder="number 2">
     <button>Calc</button>
 </form>
+
+
 ${requestScope.res}
 
-<a href="/">main</a>
+<ul class="stms">
+<a href="/">Main</a>
+</ul>
+
+
 </body>
 </html>
